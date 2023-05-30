@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palindromo</title>
+  </head>
+  <body>
+    <label for="texto">Escribe algo:</label>
+    <input type="text" id="texto" />
+    <button class="btn">Validar</button>
+    <p id="resultado"></p>
+
+    <script>
+      const input = document.getElementById("texto");
+      const boton = document.querySelector(".btn");
+      const resultado = document.getElementById("resultado");
+
+      boton.addEventListener("click", function () {
+        const texto = input.value.toLowerCase();
+        const resultadoPalindromo = esPalindromo(texto);
+
+        resultado.textContent = resultadoPalindromo
+          ? "Es un palíndromo"
+          : "No es un palíndromo";
+      });
+
+      function esPalindromo(texto) {
+        const textoSinEspacios = texto.replace(/\s/g, "");
+        const textoSinCaracteresEspeciales = textoSinEspacios.replace(
+          /[^\w\s]|_/g,
+          ""
+        );
+
+        const textoInvertido = textoSinCaracteresEspeciales
+          .split("")
+          .reverse()
+          .join("");
+
+        return textoSinCaracteresEspeciales === textoInvertido;
+      }
+    </script>
+  </body>
+</html>
