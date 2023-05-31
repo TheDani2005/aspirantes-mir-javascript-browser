@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TODO List</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>TODO List</h1>
+  <div id="todo-container">
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Ingresa tu nueva tarea">
+      <button type="submit">Add</button>
+    </form>
+    <div id="filter-container">
+      <label for="filter-select">Filtrar:</label>
+      <select id="filter-select">
+        <option value="all">Todas</option>
+        <option value="completed">Completadas</option>
+        <option value="active">Activas</option>
+      </select>
+    </div>
+    <ul id="task-list"></ul>
+    <button id="delete-btn">Delete all done</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
